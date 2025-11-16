@@ -1,0 +1,138 @@
+@use "../../styles/vars" as *;
+
+.page {
+	max-width: 720px;
+	margin: $space-6 auto;
+	padding: $space-5;
+	background: $bg;
+}
+
+.section {
+	margin-top: $space-6;
+
+	&Title {
+		font-size: 18px;
+		margin: 0 0 $space-3;
+	}
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	gap: $space-4;
+	margin-bottom: $space-3;
+
+	&Input {
+		padding: $space-3 $space-4;
+		border-radius: $radius;
+		border: 1px solid $border;
+		flex: 1;
+	}
+
+	&Title {
+		margin: 0;
+		font-size: 24px;
+		line-height: 1.2;
+		flex: 1;
+	}
+}
+
+.meta {
+	color: $muted;
+	font-size: 13px;
+	margin-bottom: $space-3;
+}
+
+.badges {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.badge {
+	display: inline-flex;
+	align-items: center;
+	gap: $space-2;
+	padding: $space-2 $space-3;
+	border-radius: $radius-pill;
+	background: #e8f0ff;
+	border: 1px solid #d6e2ff;
+	margin-right: $space-3;
+	margin-bottom: $space-3;
+	font-size: 12px;
+
+	&--muted {
+		background: #f2f2f2;
+		border-color: #ececec;
+	}
+
+	&Remove {
+		border: none;
+		background: transparent;
+		cursor: pointer;
+		font-weight: 700;
+	}
+}
+
+.row {
+	display: flex;
+	align-items: center;
+	gap: $space-4;
+	padding: $space-3 $space-4;
+	border: 1px solid #eee;
+	border-radius: $radius;
+	background: #fff;
+}
+
+.input {
+	padding: $space-3 $space-4;
+	border-radius: $radius;
+	border: 1px solid $border;
+}
+
+.btn {
+	padding: $space-3 $space-4;
+	border-radius: $radius;
+	cursor: pointer;
+	border: 1px solid $border;
+	background: #fff;
+
+	&--primary {
+		border-color: $brand;
+		background: $brand;
+		color: #fff;
+	}
+
+	&--ghost {
+	}
+
+	&--danger {
+		border-color: $danger;
+		background: #ffecec;
+		color: #b00020;
+	}
+
+	&--pill {
+		border-radius: $radius-pill;
+		padding: $space-2 $space-3;
+	}
+
+	&--filterActive {
+		border-color: $brand;
+		background: #e8f0ff;
+	}
+}
+
+.itemsBar {
+	display: flex;
+	gap: $space-3;
+	margin-bottom: $space-3;
+}
+
+.grid {
+	display: grid;
+	gap: $space-3;
+}
+
+.lineThrough {
+	text-decoration: line-through;
+}
