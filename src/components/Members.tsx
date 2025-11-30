@@ -1,13 +1,27 @@
-import { useState } from "react";
-import type { User } from "../pages/dummyData";
+import {useState} from "react";
 import s from "../pages/listDetail/list.module.scss";
-import { Badge, Section, cls } from "./uiComponents";
-export default function Users({
-                                    ownerName, isOwner, isMember, members, onAdd, onRemove, onLeave,
-                                }: {
-    ownerName: string; isOwner: boolean; isMember: boolean; members: User[];
-    onAdd: (email: string) => void; onRemove: (userId: string) => void; onLeave: () => void;
-}) {
+import {Badge, Section, cls} from "./uiComponents";
+import type {User} from "../data/dummyData";
+
+type Props = {
+    ownerName: string;
+    isOwner: boolean;
+    isMember: boolean;
+    members: User[];
+    onAdd: (email: string) => void;
+    onRemove: (userId: string) => void;
+    onLeave: () => void;
+};
+
+export default function Members({
+                                    ownerName,
+                                    isOwner,
+                                    isMember,
+                                    members,
+                                    onAdd,
+                                    onRemove,
+                                    onLeave,
+                                }: Props) {
     const [email, setEmail] = useState("");
 
     return (

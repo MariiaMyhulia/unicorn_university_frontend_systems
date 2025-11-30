@@ -1,16 +1,36 @@
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import {useNavigate, useParams} from "react-router-dom";
+import {useMemo, useState} from "react";
 import Header from "../../components/Header";
 import Members from "../../components/Members";
 import Items from "../../components/Items";
 import s from "./list.module.scss";
-import { Badge } from "../../components/uiComponents";
-import { CURRENT_USER, INITIAL_LIST, type List, type User, type Item } from "../dummyData";
+import {Badge} from "../../components/uiComponents";
+
+import {
+    CURRENT_USER,
+    getListById,
+    type List,
+    type User,
+    type Item,
+} from "../../data/dummyData.ts";
 
 export default function ListDetail() {
+    const { id } = useParams();
     const navigate = useNavigate();
 
-    const [list, setList] = useState<List>(INITIAL_LIST);
+    const initial = useMemo(() => (id ? getListById(id) : null), [id]);
+
+    if (!initial) {
+        return (
+            <div className={s.page}>
+                <h1>Not found</h1>
+                <p>List with id <code>{id}</code> does not exist.</p>
+            </div>
+        );
+    }
+
+    const [list, setList] = useState<List>(() => initial);
+
     const isOwner = CURRENT_USER.id === list.ownerId;
     const isMember = list.members.some((m) => m.id === CURRENT_USER.id);
     const canEditItems = isOwner || isMember;

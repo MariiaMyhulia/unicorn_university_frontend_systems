@@ -1,0 +1,121 @@
+@use "./vars" as *;
+
+.page {
+	max-width: 1000px;
+	margin: 25px auto;
+	padding: 15px;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 15px;
+	margin-bottom: 15px;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+	gap: 15px;
+}
+
+.tile {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 15px;
+	border: 1px solid $bg;
+	border-radius: 15px;
+	background: $border;
+}
+
+.tileTitle {
+	margin: 0;
+	font-size: 20px;
+	line-height: 1.2;
+}
+
+.meta {
+	color: #666;
+	font-size: 15px;
+}
+
+.row {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.btn {
+	padding: 10px 15px;
+	border-radius: 10px;
+	border: 1px solid $border;
+	background: $bg;
+	cursor: pointer;
+
+	&Primary {
+		border-color: $brand;
+		background: $brand;
+		color: $bg;
+	}
+	&Danger {
+		border-color: #b00020;
+		background: $danger;
+		color: $bg;
+	}
+}
+
+.badges {
+	display: flex;
+	gap: 5px;
+	flex-wrap: wrap;
+}
+
+.badge {
+	padding: 5px 10px;
+	border-radius: 999px;
+	font-size: 10px;
+	border: 1px solid $border;
+	background: $bg;
+}
+
+.modalBackdrop {
+	position: fixed; inset: 0;
+	background: rgba(0,0,0,.35);
+	display: grid; place-items: center;
+	z-index: 50;
+}
+
+.modalCard {
+	width: min(500px);
+	background: $bg;
+	border-radius: 10px;
+	border: 1px solid $border;
+	padding: 15px;
+	display: grid;
+	gap: 10px;
+}
+
+.field {
+	display: grid;
+	gap: 5px;
+}
+
+.input {
+	padding: 10px 15px;
+	border-radius: 10px;
+	border: 1px solid $border;
+}
+
+.modalActions {
+	display: flex;
+	justify-content: flex-end;
+	gap: 10px;
+}
+
+.centerEmpty {
+	padding: 40px 5px;
+	text-align: center;
+	color: $muted;
+}

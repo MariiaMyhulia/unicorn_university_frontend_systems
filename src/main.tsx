@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
 import ListDetail from "./pages/listDetail/ListDetail.tsx";
+import ListsOverview from "./pages/lists/ListsOverview.tsx";
 // import Login from "./pages/Login";
 // import Register from "./pages/Register";
 // import { AuthProvider } from "./context/AuthContext";
@@ -21,8 +22,10 @@ function Home() {
 }
 
 const router = createBrowserRouter([
-    { path: "/", element: <Home /> },
+    { path: "/", element: <ListsOverview /> },
     { path: "/lists/:id", element: <ListDetail /> },
+
+    { path: "*", element: <div style={{ padding: 16 }}>Not found</div> },
 
 ]);
 
